@@ -58,7 +58,7 @@ function App() {
     //import api_key from env
       axios.get('https://api.fitbit.com/1/user/-/activities/steps/date/2021-06-01/2021-06-30.json', {
         headers: {
-          'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyM0IyQjIiLCJzdWIiOiI2S1pNQzUiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyc29jIHJhY3QgcnNldCBybG9jIHJ3ZWkgcmhyIHJudXQgcnBybyByc2xlIiwiZXhwIjoxNjIzNjA3NDkzLCJpYXQiOjE2MjMwMDI2OTN9.0OKGlrESHV_pCk2XN4ZVXtUvBMVhe-y0nAYXgbfHgXo',
+          'Authorization': 'Bearer ' + process.env.REACT_APP_API_KEY,
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       })
