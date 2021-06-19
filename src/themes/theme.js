@@ -25,6 +25,15 @@ const theme = createMuiTheme({
             letterSpacing: "0.1px",
             color:"white"
           },
+          body2: {
+            fontFamily: "sans-serif",
+            lineHeight: 1.5,
+            fontWeight: 500,
+            fontSize: "1rem",
+            letterSpacing: "0.1px",
+            color:"white",
+            fontWeight: "bold"
+          },
     },
 });
 

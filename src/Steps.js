@@ -42,11 +42,12 @@ const Steps = (props) => {
                         { renderLottie && <Lottie animationData={star} autoplay={step.value > 0 ? true : false} loop={false} style={{marginTop:"25px",height:matchesXS ? "80px" : "150px", width: matchesXS ? "145px" : "250px"}} /> }
                     </CardMedia>
                     <CardContent>
-                    <Typography variant="h5" style={{color:"black"}}>
-                        July {step.dateTime.substr(8,9)}
+                    <Typography variant="body2" style={{color:"black"}}>
+                        {step.value < 1 ? <br /> : `${step.value} steps`}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary">
-                        {step.value < 1 ? <br /> :   `${step.value} steps`}
+                    <Typography variant="body1" color="textSecondary">
+                        July {step.dateTime.substr(8,9)}
+                        {step.value < 1 && matchesXS ? <br /> : null}
                     </Typography>
                     </CardContent>
                 </Card>

@@ -9,7 +9,7 @@ const ProgressBar = (props) => {
       return total+num;
     })
 
-    let goal = totalSteps * 0.002 / 1000 * 100;
+    let goal = totalSteps * 0.0015 / 750 * 100;
 
     const containerStyles = {
       height: 22.5,

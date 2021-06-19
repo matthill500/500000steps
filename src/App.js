@@ -94,7 +94,8 @@ function App() {
 
         <Grid container direction="column" style={{height: matchesXS ? "85vh" : "100vh"}} alignItems="center" justify="center">
             <img src={Logo} alt="irish cancer society logo" height="200" width="200" style={{marginTop:"3.33em"}}/>
-            <Typography variant="h5">Irish Cancer Society</Typography>
+            <Typography variant="h5">Steps for Irish Cancer Society</Typography>
+            <a href="https://ie.gofundme.com/f/500000-steps-for-irish-cancer-society" target="_blank" rel="noopener noreferrer" style={{ textDecoration:"none", padding:"25px"}}><Button variant="contained">Donate</Button></a>
         </Grid>
       
         <Grid item container justify="center" style={{padding: matchesXS ? "40px" : "140px"}}>
@@ -132,13 +133,16 @@ function App() {
           </Grid>
           <Grid item container sm={6} justify="center" alignItems="center">
           <Typography variant="body1"><b>July</b> <br /><br />
-            For each step I make in July I will personally be donating to Irish Cancer Society with a goal 
-            of €1000, you can track my donation progress through the progress bar above. You can also view contributions
+            For each step I make in July I will personally be donating to Irish Cancer Society, 
+            you can track my donation progress through the progress bar above. You can also view contributions
             by supporters on my <a href="https://ie.gofundme.com/f/500000-steps-for-irish-cancer-society" target="_blank" rel="noopener noreferrer" style={{ color:"white"}}>GoFundMe page.</a></Typography>
           </Grid>
         </Grid>
 
-        <Grid item container justify={matchesMD ? "space-between" : "center"} style={{padding: matchesXS ? "20px" : matchesMD ? "80px" : "140px", marginTop: matchesXS ? "10em" : undefined}}>
+        <Grid item container justify={matchesMD ? "space-around" : "center"} style={{padding: matchesXS ? "20px" : matchesMD ? "80px" : "140px", marginTop: matchesXS ? "10em" : undefined}}>
+          <Grid item container sm={12} justify="center" style={{padding:"20px", textAlign:"center"}}>
+            <Typography variant="body1"><b>Daily Step Progress</b></Typography>
+          </Grid>
           {/* Steps */}
           <Steps steps={steps} />
         </Grid>
