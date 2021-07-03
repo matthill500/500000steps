@@ -35,6 +35,7 @@ function App() {
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesMU = useMediaQuery(theme.breakpoints.up("md"));
+  const matchesLG = useMediaQuery(theme.breakpoints.up("lg"));
 
   const [loading, setLoading] = useState(true);
   const [steps, setSteps] = useState(null);
@@ -88,7 +89,7 @@ function App() {
           </Toolbar>
         </AppBar>
       
-        <Grid item container justify="center" style={{padding: matchesXS ? "40px" : "100px", paddingBottom:"-40px"}}>
+        <Grid item container justify="center" style={{padding: matchesXS ? "40px" : "100px", paddingBottom:"-40px", marginTop: matchesLG?"3.5em":undefined}}>
           <Grid item container justify="center" alignItems="center" sm={matchesMD ? 12 : matchesSM ? 6 : 6} style={{paddingLeft:matchesMU ?"7.5em" : undefined}}>
             <Typography variant="body1" align="left"><b>My Goal</b> <br /><br />
             To fundraise for Irish Cancer Society I have set myself a challenge to achieve half a million steps in July. Everyone in some shape or form has been affected by Cancer and
@@ -112,7 +113,7 @@ function App() {
           </Grid>
         </Grid>
 
-        <Grid container direction="column" style={{height: matchesMD ? "120vh" : matchesXS ? "30vh" : "100vh"}} alignItems="center" justify="center">
+        <Grid container direction="column" style={{height: matchesMD ? "120vh" : matchesXS ? "30vh" : "50vh"}} alignItems="center" justify="center">
             <img src={Logo} alt="irish cancer society logo" height="200" width="200" style={{marginTop:"3.33em"}}/>
             <Typography variant="h5">Steps for Irish Cancer Society</Typography>
             <a href="https://ie.gofundme.com/f/500000-steps-for-irish-cancer-society" target="_blank" rel="noopener noreferrer" style={{ textDecoration:"none", padding:"25px"}}><Button variant="contained">Donate</Button></a>
