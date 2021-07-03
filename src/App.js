@@ -23,6 +23,7 @@ import {ThemeProvider} from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 
 import ProgressBar from './ProgressBar';
 import Steps from './Steps';
@@ -70,7 +71,7 @@ function App() {
     <ThemeProvider theme={theme1}>
       <Grid style={{
       backgroundImage: `url(${background})`, 
-      height: matchesXS ? "900vh": "750vh",  
+      height: "100%",  
       backgroundSize: "cover",
       backgroundAttachment: "fixed",
       backgroundPosition: "absolute",
@@ -85,30 +86,36 @@ function App() {
             </Grid>
           </Toolbar>
         </AppBar>
-
-        <Grid container direction="column" style={{height: matchesXS ? "85vh" : "100vh"}} alignItems="center" justify="center">
-            <img src={Logo} alt="irish cancer society logo" height="200" width="200" style={{marginTop:"3.33em"}}/>
-            <Typography variant="h5">Steps for Irish Cancer Society</Typography>
-            <a href="https://ie.gofundme.com/f/500000-steps-for-irish-cancer-society" target="_blank" rel="noopener noreferrer" style={{ textDecoration:"none", padding:"25px"}}><Button variant="contained">Donate</Button></a>
-        </Grid>
       
-        <Grid item container justify="center" style={{padding: matchesXS ? "40px" : "140px"}}>
-          <Grid item container justify="center" alignItems="center" sm={5}>
-            <Typography variant="body1"><b>The Goal</b> <br /><br />
-            <Grid item align="left">
-            To fundraise for Irish Cancer Society I have set myself a challenge to achieve 500,000 steps in July. Everyone in some shape or form has been affected by Cancer and
+        <Grid item container justify="center" style={{padding: matchesXS ? "40px" : "100px", paddingBottom:"-40px"}}>
+          <Grid item container justify="center" alignItems="center" sm={matchesMD ? 12 : matchesSM ? 5 : 5}>
+            <Typography variant="body1" align="left"><b>My Goal</b> <br /><br />
+            To fundraise for Irish Cancer Society I have set myself a challenge to achieve half a million steps in July. Everyone in some shape or form has been affected by Cancer and
             this is why I have chosen Irish Cancer Society.<br />
             In conjuction with Fitbit I have setup this website to track my progress over the month. If you are feeling
             charitable and want to support my fundraiser any donation would be greatly appreciated, you can donate
             through my <a href="https://ie.gofundme.com/f/500000-steps-for-irish-cancer-society" target="_blank" rel="noopener noreferrer" style={{ color:"white"}}>GoFundMe page.</a>
-            </Grid>
            </Typography>
+     
           </Grid>
-          <Grid item container sm={7} justify="center">
+          <Grid item container sm={matchesMD ? 12 : matchesSM ? 7 : 7 } justify="center">
           <Lottie animationData={groovyWalkAnimation} style={{height:"400px", width:"400px", marginTop: matchesXS ? "-3em" : "2em"}} />
+          </Grid>
+          <Grid item container direction="column" justify="center">
+            <Grid item>
+            <Typography variant="body2" style={{fontSize:"0.75rem"}}>keep scrolling for more info</Typography>
+            </Grid>
+            <Grid item>
+            <ArrowDownwardIcon style={{fill: "white"}} fontSize="small" />
+            </Grid>
           </Grid>
         </Grid>
 
+        <Grid container direction="column" style={{height: matchesMD ? "120vh" : matchesXS ? "30vh" : "100vh"}} alignItems="center" justify="center">
+            <img src={Logo} alt="irish cancer society logo" height="200" width="200" style={{marginTop:"3.33em"}}/>
+            <Typography variant="h5">Steps for Irish Cancer Society</Typography>
+            <a href="https://ie.gofundme.com/f/500000-steps-for-irish-cancer-society" target="_blank" rel="noopener noreferrer" style={{ textDecoration:"none", padding:"25px"}}><Button variant="contained">Donate</Button></a>
+        </Grid>
 
         <Grid item container justify="center" style={{padding: matchesXS ? "0px" : "140px", height: matchesXS ? "70vh" : undefined}}>
           <Grid item container justify="center" alignItems="center" >
@@ -143,12 +150,12 @@ function App() {
         </Grid>
         <Grid item container justify="center" direction="column" style={{paddingTop: "120px"}}>
           <Grid item>
-        <Typography variant="body1" style={{color:"#F50157"}}>© Matt Hill</Typography>
+        <Typography variant="body1"><b>© Matt Hill</b></Typography>
         </Grid>
         <Grid item style={{padding:"15px"}}>
-          <a href="https://www.facebook.com/matty.hill.500" rel="noreferrer" target="_blank"><FacebookIcon color="secondary" fontSize="large" /></a>
-          <a href="https://www.linkedin.com/in/matthew-hill-28b823132/" rel="noreferrer" target="_blank"><LinkedInIcon color="secondary" fontSize="large"  /></a>
-          <a href="https://www.instagram.com/mattyhill500/" rel="noreferrer" target="_blank"><InstagramIcon color="secondary" fontSize="large" /></a>
+          <a href="https://www.facebook.com/matty.hill.500" rel="noreferrer" target="_blank"><FacebookIcon style={{fill: "white"}} fontSize="large" /></a>
+          <a href="https://www.linkedin.com/in/matthew-hill-28b823132/" rel="noreferrer" target="_blank"><LinkedInIcon style={{fill: "white"}} fontSize="large"  /></a>
+          <a href="https://www.instagram.com/mattyhill500/" rel="noreferrer" target="_blank"><InstagramIcon style={{fill: "white"}} fontSize="large" /></a>
         </Grid>
         </Grid>
       </Grid>
