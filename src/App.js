@@ -34,6 +34,7 @@ function App() {
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesMU = useMediaQuery(theme.breakpoints.up("md"));
 
   const [loading, setLoading] = useState(true);
   const [steps, setSteps] = useState(null);
@@ -88,7 +89,7 @@ function App() {
         </AppBar>
       
         <Grid item container justify="center" style={{padding: matchesXS ? "40px" : "100px", paddingBottom:"-40px"}}>
-          <Grid item container justify="center" alignItems="center" sm={matchesMD ? 12 : matchesSM ? 5 : 5}>
+          <Grid item container justify="center" alignItems="center" sm={matchesMD ? 12 : matchesSM ? 6 : 6} style={{paddingLeft:matchesMU ?"7.5em" : undefined}}>
             <Typography variant="body1" align="left"><b>My Goal</b> <br /><br />
             To fundraise for Irish Cancer Society I have set myself a challenge to achieve half a million steps in July. Everyone in some shape or form has been affected by Cancer and
             this is why I have chosen Irish Cancer Society.<br />
@@ -98,7 +99,7 @@ function App() {
            </Typography>
      
           </Grid>
-          <Grid item container sm={matchesMD ? 12 : matchesSM ? 7 : 7 } justify="center">
+          <Grid item container sm={matchesMD ? 12 : matchesSM ? 6 : 6 } justify="center">
           <Lottie animationData={groovyWalkAnimation} style={{height:"400px", width:"400px", marginTop: matchesXS ? "-3em" : "2em"}} />
           </Grid>
           <Grid item container direction="column" justify="center">
@@ -106,7 +107,7 @@ function App() {
             <Typography variant="body2" style={{fontSize:"0.75rem"}}>keep scrolling for more info</Typography>
             </Grid>
             <Grid item>
-            <ArrowDownwardIcon style={{fill: "white"}} fontSize="small" />
+            <ArrowDownwardIcon style={{fill: "white", marginLeft:"0.2em"}} fontSize="small" />
             </Grid>
           </Grid>
         </Grid>
