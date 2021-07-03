@@ -28,11 +28,10 @@ const theme = createMuiTheme({
           body2: {
             fontFamily: "sans-serif",
             lineHeight: 1.5,
-            fontWeight: 500,
+            fontWeight: "bold",
             fontSize: "1rem",
             letterSpacing: "0.1px",
             color:"white",
-            fontWeight: "bold"
           },
     },
 });

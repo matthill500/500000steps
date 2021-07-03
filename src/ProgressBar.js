@@ -9,7 +9,7 @@ const ProgressBar = (props) => {
       return total+num;
     })
 
-    let goal = totalSteps * 0.0015 / 750 * 100;
+    let goal = totalSteps * 0.0005 / 250 *100;
 
     const containerStyles = {
       height: 22.5,
@@ -21,7 +21,7 @@ const ProgressBar = (props) => {
   
     const fillerStyles = {
       height: '100%',
-      width: `${goal+10}%`,
+      width: `${goal}%`,
       backgroundColor: bgcolor,
       borderRadius: 50,
       textAlign: 'right'
@@ -36,7 +36,7 @@ const ProgressBar = (props) => {
     return (
       <div style={containerStyles}>
         <div style={fillerStyles}>
-          <span style={labelStyles}>{`€${goal.toFixed()*10}`}</span>
+          <span style={labelStyles}>{`€${goal.toFixed()*5}`}</span>
         </div>
       </div>
     );

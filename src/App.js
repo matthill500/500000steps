@@ -20,17 +20,13 @@ import { useTheme } from "@material-ui/core/styles";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import {ThemeProvider} from '@material-ui/core';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 import ProgressBar from './ProgressBar';
 import Steps from './Steps';
 import Loading from './Loading';
-
-// get total steps 20000
-// times by 0.002
-// = 40
-//goal is 1000
-//40 / 1000 x 100 === 4
-
 
 function App() {
   const theme = useTheme();
@@ -56,7 +52,7 @@ function App() {
    const init = () => {
     setLoading(true)
     //import api_key from env
-      axios.get('https://api.fitbit.com/1/user/-/activities/steps/date/2021-06-01/2021-06-30.json', {
+      axios.get('https://api.fitbit.com/1/user/-/activities/steps/date/2021-07-01/2021-07-31.json', {
         headers: {
           'Authorization': 'Bearer ' + process.env.REACT_APP_API_KEY,
           'Content-Type': 'application/x-www-form-urlencoded'
@@ -68,15 +64,13 @@ function App() {
       });  
     }
   
-
   if(loading) return <Loading />;
  
-
   return (
     <ThemeProvider theme={theme1}>
       <Grid style={{
       backgroundImage: `url(${background})`, 
-      height:"1200vh",  
+      height: matchesXS ? "900vh": "750vh",  
       backgroundSize: "cover",
       backgroundAttachment: "fixed",
       backgroundPosition: "absolute",
@@ -115,6 +109,7 @@ function App() {
           </Grid>
         </Grid>
 
+
         <Grid item container justify="center" style={{padding: matchesXS ? "0px" : "140px", height: matchesXS ? "70vh" : undefined}}>
           <Grid item container justify="center" alignItems="center" >
             <Typography variant="body1"><b>Personal Donation Progress Bar</b> <br /><br /></Typography>
@@ -145,6 +140,16 @@ function App() {
           </Grid>
           {/* Steps */}
           <Steps steps={steps} />
+        </Grid>
+        <Grid item container justify="center" direction="column" style={{paddingTop: "120px"}}>
+          <Grid item>
+        <Typography variant="body1" style={{color:"#F50157"}}>© Matt Hill</Typography>
+        </Grid>
+        <Grid item style={{padding:"15px"}}>
+          <a href="https://www.facebook.com/matty.hill.500" rel="noreferrer" target="_blank"><FacebookIcon color="secondary" fontSize="large" /></a>
+          <a href="https://www.linkedin.com/in/matthew-hill-28b823132/" rel="noreferrer" target="_blank"><LinkedInIcon color="secondary" fontSize="large"  /></a>
+          <a href="https://www.instagram.com/mattyhill500/" rel="noreferrer" target="_blank"><InstagramIcon color="secondary" fontSize="large" /></a>
+        </Grid>
         </Grid>
       </Grid>
     </ThemeProvider>
